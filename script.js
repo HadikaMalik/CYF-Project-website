@@ -69,16 +69,18 @@ images = ['https://images.pexels.com/photos/13027954/pexels-photo-13027954.jpeg?
 
 
 document.getElementById('button_next').addEventListener('click', (event) => {
-  images.push(images[0]);
   let element_list_imag = document.getElementById('list_imag');
-  element_list_imag.setAttribute("src", images.shift());
+  images.push(images[0]);
+  images.shift();
+  element_list_imag.setAttribute("src", images[0]);
 
 });
 
 document.getElementById('button_prev').addEventListener('click', (event) => {
-  images.unshift(images.slice(-1)[0]);
   let element_list_imag2 = document.getElementById('list_imag');
-  element_list_imag2.setAttribute("src", images.pop());
+  images.unshift(images.slice(-1)[0]);
+  images.pop();
+  element_list_imag2.setAttribute("src", images[0]);
 
 });
 nav = ['Shopping cart', 'Image Carousel', 'Comments'];
